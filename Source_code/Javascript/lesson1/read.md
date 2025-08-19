@@ -1,0 +1,1 @@
+làm quen với việc link file html với file js
