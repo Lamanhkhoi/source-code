@@ -1,0 +1,61 @@
+div {
+    display: inline-block;
+}
+
+p {
+    text-align: center;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-box {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: #00aa00;
+}
+
+.blue {
+    background-color: #4da6ff;
+}
+
+.indigo {
+    background-color: indigo;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.pink {
+    background-color: magenta;
+}
+
+.white {
+    background-color: white;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 30% 25% 30%;
+}
