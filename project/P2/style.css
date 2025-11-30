@@ -7,16 +7,18 @@ header{
 }
 
 nav{
+    display: inline-block;
     background-color: bisque;
+    width: 80%;
 }
 
 main{
     background-color: bisque;
 }
 
-li{
+/* li{
     width: 100px;
-}
+} */
 
 h1{
     text-align: center;
@@ -25,4 +27,23 @@ h1{
 
 p{
     line-height: 30px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.grid img{
+    width: 100%;
+}
+
+.flex{
+    .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
 }
