@@ -1,0 +1,79 @@
+.skip-link {
+    position: absolute; 
+    top: -50px;         
+    left: 0;
+    background-color: #000000; 
+    color: #FFFFFF;           
+    padding: 10px 15px;
+    z-index: 100;              
+    text-decoration: none;
+    transition: top 0.3s;      
+}
+
+.skip-link:focus {
+    top: 0;
+    position: absolute;
+}
+
+nav {
+    background-color: #757575; 
+    padding: 1rem;          
+}
+
+nav ul {
+    display: flex;         
+    justify-content: center; 
+    list-style-type: none;  /* Bỏ mấy cái chấm tròn đầu dòng */
+    margin: 0;
+    padding: 0;
+    gap: 2rem;             
+}
+
+nav a {
+    color: white;           
+    text-decoration: none;  
+    font-size: 1.2rem;      
+    font-weight: bold;      
+    padding: 5px 10px;      
+    transition: color 0.3s; 
+}
+
+nav a:hover {
+    color: #ff9900;         
+    background-color: #555; 
+    border-radius: 5px;     
+}
+
+.gallery-container {
+    display: grid; 
+    /* Chia làm 3 cột bằng nhau (1fr = 1 fraction/phần) */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+.gallery-container img {
+    width: 100%;      
+    height: auto;     
+    border: 5px solid #ddd; 
+    padding: 5px;          
+    background-color: white; 
+}
+
+.gallery-container img:nth-child(even) {
+    border-color: #007bff; 
+    border-radius: 50%;    
+}
+
+.gallery-container img:nth-child(odd) {
+    border-color: #ff9900; 
+    border-radius: 0;      
+}
+
+.profile-pic {
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* Hiệu ứng bóng đổ nhẹ */
+    max-width: 50%;
+    display: flex;
+    margin: 0 auto;
+}
