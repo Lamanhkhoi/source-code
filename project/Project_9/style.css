@@ -1,0 +1,28 @@
+.product-card{
+    width: 300px;
+    box-sizing: border-box;
+    border: 5px solid black;
+    padding: 20px;
+    margin: 50px;
+    
+}
+
+.main-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.item{
+    border: 1px solid black;
+    padding: 20px;
+}
