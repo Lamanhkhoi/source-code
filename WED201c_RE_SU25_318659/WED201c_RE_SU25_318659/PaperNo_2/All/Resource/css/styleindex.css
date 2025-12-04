@@ -1,0 +1,91 @@
+body{
+    font-family: Arial, sans-serif;
+    color: #333;
+    
+}
+
+.container{
+    border: 2px solid black;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+h2{
+    color: cyan;
+    font-size: 24px;
+}
+
+
+.item-landmark {
+    position:relative ;
+    margin-bottom: 20px;
+    padding: 0 15px; /* Giữ padding chuẩn của Bootstrap */
+}
+
+h3{
+    position:absolute ;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+
+    margin: 0;
+    padding: 10px;
+    
+    background-color: rgba(0, 0, 0, 0.4); 
+    color: white;      
+    font-size: 14px;    
+    text-align: center; 
+}
+
+.price-text {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: orange;
+}
+
+.btn-book {
+    background-color: #00c0ce; /* Nền xanh */
+    color: white;              /* Chữ trắng */
+    border: none;
+    border-radius: 0;          /* Vuông góc giống mẫu */
+    padding: 8px 20px;         /* Tăng kích thước nút */
+    width: 100%;               /* Nút dài bằng chiều rộng cột */
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background-color: #008c96; /* Đổi màu đậm hơn khi di chuột */
+    color: white;
+}
+
+/* Helper: Xóa margin top để tiêu đề thẳng hàng với ảnh */
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.registration-form {
+    background-color: #8b7f7fe7; /* Nền xám nhạt */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.img-responsive1{
+    width: 100%;
+}
+
+.img-responsive2{
+    width: 100%;
+    margin-top: 41px;
+}
