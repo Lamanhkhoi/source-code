@@ -20,9 +20,9 @@ body{
     justify-content: center;
 }
 
-.car_img{
+/* .car_img{
     width: 55%;
-}
+} */
 
 .car_img img{
     width: 100%;
@@ -37,9 +37,9 @@ body{
     left: 0px;
 }
 
-.info_regis{
+/* .info_regis{
     width: 45%;
-}
+} */
 
 h1{
     color: orange;
@@ -62,10 +62,10 @@ p{
     text-align: justify;
 }
 
-.sell_car{
+/* .sell_car{
     width: 25%;
     border: 2px solid black;
-}
+} */
 
 .sell_car img{
     width: 100%;
@@ -76,9 +76,9 @@ p{
     margin-left: 11px;
 }
 
-.sell_info{
+/* .sell_info{
     width: 25%;
-}
+} */
 
 .best_sell h2{
     color: aqua;
