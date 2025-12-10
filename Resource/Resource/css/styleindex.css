@@ -1,0 +1,250 @@
+body{
+    border: 2px solid black;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.content-menu{
+    background-color:rgb(0, 128, 255);
+    padding: 5px;
+}
+
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li a{
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none !important;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 50%;
+    object-fit: cover; 
+    display: block; 
+}
+
+h1{
+    color: cyan;
+}
+
+.title-beach{
+    display: flex;
+    justify-content: center;
+}
+
+.content-mango{
+    display: flex;
+    width: 100%;
+    align-items: stretch ;
+}
+
+.container1{
+    width: 40%;
+    position: relative;
+    margin: 10px;
+}
+
+.container1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.container2{
+    width: 60%; 
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-align: justify;
+}
+
+.picture-contain{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+}
+
+.picture-contain img{
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.container2 h2 {
+    color: #da5c08;
+    margin: 0 auto;
+}
+
+.container2 a {
+    background-color: #00c0ce; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.container2 > div:last-child {
+    display: flex;         
+    justify-content: flex-end; 
+    width: 100%;
+}
+
+/* --- CẤU HÌNH CHUNG --- */
+* {
+    box-sizing: border-box; /* Bắt buộc để tính toán kích thước không bị vỡ */
+}
+
+img {
+    width: 100%;       /* Ảnh luôn co giãn theo khung chứa */
+    display: block;    /* Xóa khoảng trắng thừa dưới chân ảnh */
+    object-fit: cover; /* Giúp ảnh không bị méo */
+}
+
+/* Tiêu đề chung */
+.section-title h1 {
+    color: #00c0ce; /* Màu xanh Cyan */
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* ================= CSS PHẦN MUINE BAY RESORT ================= */
+
+/* 1. Khung bao ngoài: Chia 2 cột Trái/Phải */
+.muine-wrapper {
+    display: flex;          /* Dàn hàng ngang */
+    width: 100%;
+    margin-bottom: 40px;
+    align-items: stretch;   /* Kéo dãn cho Sidebar cao bằng Gallery */
+}
+
+/* 2. Cột Trái (Gallery): Chiếm 70% */
+.gallery-container {
+    width: 70%;
+    padding-right: 5px;     /* Khoảng cách nhỏ với Sidebar */
+    display: flex;
+    flex-direction: column; /* Xếp dọc: Hàng trên + Hàng dưới */
+    gap: 5px;               /* Khoảng cách giữa Hàng trên và dưới */
+}
+
+/* --- Xử lý Hàng Trên của Gallery --- */
+.gallery-top {
+    display: flex;      /* Dàn ngang */
+    height: 300px;      /* Cố định chiều cao để chia cho đều (Bạn có thể chỉnh số này) */
+    gap: 5px;           /* Khoảng cách giữa cột nhỏ và cột to */
+}
+
+/* Cột nhỏ chứa 2 ảnh xếp dọc */
+.col-small-stack {
+    width: 35%;         /* Chiếm 35% chiều rộng */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;           /* Khoảng cách giữa 2 ảnh dọc */
+    border: 2px solid black;
+}
+
+.col-small-stack img {
+    height: 50%;        /* Mỗi ảnh cao 50% */
+}
+
+/* Cột to chứa 1 ảnh lớn */
+.col-big {
+    width: 65%;
+    border: 2px solid black;         /* Chiếm 65% còn lại */
+}
+.col-big img {
+    height: 100%;       /* Cao full khung */
+}
+
+/* --- Xử lý Hàng Dưới của Gallery (4 ảnh) --- */
+.gallery-bottom {
+    display: flex;      /* Dàn ngang */
+    gap: 5px;           /* Khoảng cách giữa các ảnh */
+}
+.gallery-bottom img {
+    width: 25%;         /* Chia đều 4 ảnh (100% / 4) */
+    height: 100px;      /* Chiều cao cố định cho đẹp */
+}
+
+
+/* 3. Cột Phải (Sidebar xám): Chiếm 30% */
+.sidebar-info {
+    width: 30%;
+    background-color: #666; /* Màu nền xám đậm */
+    color: white;
+    padding: 20px;
+}
+
+.sidebar-info h2 {
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.sidebar-info ul {
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* ================= CSS PHẦN SUGGESTIONS ================= */
+
+.suggestion-wrapper {
+    display: flex;      /* Dàn 4 cột hàng ngang */
+    gap: 10px;          /* Khoảng cách giữa các thẻ */
+    margin-bottom: 50px;
+}
+
+.suggest-card {
+    width: 25%;         /* Chia đều 4 cột */
+    position: relative; /* Để làm khung cho chữ bám vào */
+}
+
+.card-text {
+    position: absolute; /* Chữ trôi nổi */
+    bottom: 0;          /* Dính đáy */
+    left: 0;
+    width: 100%;        /* Trải rộng hết bề ngang ảnh */
+    
+    background-color: rgba(0, 0, 0, 0.6); /* Nền đen trong suốt */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVE MOBILE (Nếu cần) --- */
+@media only screen and (max-width: 768px) {
+    .muine-wrapper, .gallery-top, .gallery-bottom, .suggestion-wrapper {
+        flex-direction: column; /* Chuyển tất cả về dạng dọc */
+    }
+    .gallery-container, .sidebar-info, .col-small-stack, .col-big, .suggest-card {
+        width: 100%; /* Full màn hình */
+    }
+    .gallery-bottom img {
+        width: 100%; /* Ảnh dưới cũng full */
+    }
+}

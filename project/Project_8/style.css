@@ -1,0 +1,184 @@
+
+*{
+    box-sizing: border-box; /* Giúp tính toán kích thước không bị vỡ khung */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center; 
+}
+
+/* Style mặc định cho từng khối (Mobile view) */
+/* Đề bài: "one horizontal div" -> Tức là width 100% */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%; /* Chiếm hết chiều ngang (1 cột) */
+    
+    /* display: block là mặc định của div, nên các khối sẽ xếp chồng lên nhau */
+}
+
+.card img {
+    width: 100%;  /* Ảnh co giãn theo khung */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* --- PHẦN 2: TABLET VIEW (Yêu cầu đề bài) --- */
+/* Query #1: Trigger at 772px */
+@media screen and (min-width: 772px) {
+    
+    .card {
+        /* Yêu cầu: Divs are 45% of viewport width */
+        width: 45%; 
+        
+        /* Yêu cầu: Change more than just width... */
+        /* Phải dùng inline-block để 2 div nằm cạnh nhau được */
+        display: inline-block; 
+        vertical-align: top; /* Căn lề trên cho thẳng hàng */
+        margin: 1.5%;        /* Tạo khoảng cách giữa 2 cột */
+    }
+
+    /* Yêu cầu: Images are no more 30% of viewport height */
+    .card img {
+        max-height: 30vh; /* vh = viewport height */
+        object-fit: cover; /* Giúp ảnh không bị méo khi bị ép chiều cao */
+    }
+}
+
+/* --- PHẦN 3: LARGE SCREEN VIEW (Yêu cầu đề bài) --- */
+/* Query #2: Trigger at 998px */
+@media screen and (min-width: 998px) {
+    
+    .card {
+        /* Yêu cầu: Divs are 30% of viewport width */
+        width: 30%; 
+        
+        /* Margin giữ nguyên hoặc chỉnh lại chút cho đẹp */
+        margin: 1%;
+    }
+    
+    /* Các thuộc tính khác (display, max-height ảnh) sẽ tự kế thừa từ Tablet View 
+       nên không cần viết lại. */
+}
+
+/* --- 1. GENERAL & MOBILE VIEW (Mặc định - Mobile First) --- */
+/* Yêu cầu: Không dùng media query cho phần này */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block; /* Sửa lỗi khoảng trắng dưới ảnh */
+}
+
+/* Yêu cầu: One column grid, 10px gap */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 cột */
+    gap: 10px;                  /* Khoảng cách 10px */
+}
+
+.card {
+    margin: 0;          /* Reset margin mặc định của thẻ figure */
+    padding: 10px;
+    border: 2px solid #ddd; /* Viền nhẹ để dễ nhìn */
+    background-color: #f9f9f9;
+}
+
+
+/* --- 2. TABLET VIEW (Trigger at 772px) --- */
+@media screen and (min-width: 772px) {
+    .gallery {
+        /* Yêu cầu: Two column grid */
+        grid-template-columns: 1fr 1fr; 
+        
+        /* Lưu ý: Không lặp lại display: grid (đã kế thừa từ mobile) */
+    }
+
+    /* Yêu cầu: Border radius to create circular shape */
+    .card {
+        border-radius: 50px; /* Bo tròn các góc */
+        /* Hoặc dùng 50% nếu muốn hình tròn vo, nhưng với thẻ figure chữ nhật thì 50px đẹp hơn */
+    }
+
+    /* Yêu cầu: Last figure takes up both columns */
+    /* span 2 nghĩa là chiếm 2 ô grid */
+    .card:last-child {
+        grid-column: span 2; 
+    }
+}
+
+
+/* --- 3. LARGE SCREEN / DESKTOP VIEW (Trigger at 992px) --- */
+@media screen and (min-width: 992px) {
+    .gallery {
+        /* Đề bài không nói rõ desktop mấy cột, nhưng thường là 3. 
+           Tuy nhiên, đoạn "take up BOTH columns" gợi ý có thể vẫn là 2 hoặc lưới đặc biệt.
+           Để an toàn và đẹp, ta để 3 cột nhé (thường final project là 3). */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    /* Yêu cầu: Remove border radius */
+    .card {
+        border-radius: 0; 
+    }
+
+    /* Yêu cầu: Every 3rd figure takes up both columns */
+    /* Công thức 3n chọn phần tử thứ 3, 6, 9... */
+    .card:nth-child(3n) {
+        grid-column: span 2; 
+    }
+
+    /* Cần reset lại cái last-child của Tablet để nó không bị xung đột */
+    .card:last-child {
+        grid-column: auto; 
+    }
+}
+
+
+/* --- 4. PREFERS REDUCED MOTION (Người dùng tắt hiệu ứng chuyển động) --- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        /* Yêu cầu: Remove scroll behavior */
+        scroll-behavior: auto; 
+    }
+    
+    /* Tắt các hiệu ứng transition khác nếu có */
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
+/* --- 5. DARK MODE (Giao diện tối) --- */
+/* Assuming default is light, create query for dark colors */
+@media (prefers-color-scheme: dark) {
+    .card {
+        /* Yêu cầu: Background dark */
+        background-color: #333333; 
+        
+        /* Yêu cầu: Font color lighter (yellow-ish) */
+        color: #f1c40f; 
+        
+        /* Yêu cầu: Border color black */
+        border-color: #000000;
+    }
+    
+    body {
+        background-color: #1a1a1a; /* Thêm cái nền body tối cho dịu mắt */
+        color: white;
+    }
+}

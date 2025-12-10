@@ -1,0 +1,70 @@
+
+*{
+    box-sizing: border-box; /* Giúp tính toán kích thước không bị vỡ khung */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center; 
+}
+
+/* Style mặc định cho từng khối (Mobile view) */
+/* Đề bài: "one horizontal div" -> Tức là width 100% */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%; /* Chiếm hết chiều ngang (1 cột) */
+    
+    /* display: block là mặc định của div, nên các khối sẽ xếp chồng lên nhau */
+}
+
+.card img {
+    width: 100%;  /* Ảnh co giãn theo khung */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* --- PHẦN 2: TABLET VIEW (Yêu cầu đề bài) --- */
+/* Query #1: Trigger at 772px */
+@media screen and (min-width: 772px) {
+    
+    .card {
+        /* Yêu cầu: Divs are 45% of viewport width */
+        width: 45%; 
+        
+        /* Yêu cầu: Change more than just width... */
+        /* Phải dùng inline-block để 2 div nằm cạnh nhau được */
+        display: inline-block; 
+        vertical-align: top; /* Căn lề trên cho thẳng hàng */
+        margin: 1.5%;        /* Tạo khoảng cách giữa 2 cột */
+    }
+
+    /* Yêu cầu: Images are no more 30% of viewport height */
+    .card img {
+        max-height: 30vh; /* vh = viewport height */
+        object-fit: cover; /* Giúp ảnh không bị méo khi bị ép chiều cao */
+    }
+}
+
+/* --- PHẦN 3: LARGE SCREEN VIEW (Yêu cầu đề bài) --- */
+/* Query #2: Trigger at 998px */
+@media screen and (min-width: 998px) {
+    
+    .card {
+        /* Yêu cầu: Divs are 30% of viewport width */
+        width: 30%; 
+        
+        /* Margin giữ nguyên hoặc chỉnh lại chút cho đẹp */
+        margin: 1%;
+    }
+    
+    /* Các thuộc tính khác (display, max-height ảnh) sẽ tự kế thừa từ Tablet View 
+       nên không cần viết lại. */
+}
